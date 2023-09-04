@@ -10,7 +10,7 @@ const Movies = () => {
       headers: {
         accept: "application/json",
         Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjNmE0YjkxYmNjNGZiMmMyZDk1NGFlZjlkMmViMmU0NCIsInN1YiI6IjY0ZjBmZWZjM2E5OTM3MDExY2JkZDZiZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.sPjp8MlpHbSaX30XcjKyPlVcmv8-_N50jApvjq4x7bg",
+          `Bearer ${process.env. REACT_APP_API_KEY}`,
       },
     };
 
@@ -29,7 +29,7 @@ const Movies = () => {
         console.log(data);
       })
       .catch((err) => console.error(err));
-  }, [page]);
+  }, []);
 
   return (
     <div className="container">
