@@ -1,0 +1,448 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
+
+/* COLORS */
+
+:root {
+  --main-red-color: #e01228;
+  --dark-red-color: #ae1828;
+  --bg-color: #3d3d3d;
+  --text-color: #333;
+  --light-grey: #bbb;
+  --dark-color:#111;
+  --white:#f1f1f1;
+}
+
+/**************** HOME ****************/
+
+.home_background {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  padding-top: 8em;
+  background: linear-gradient(0deg,
+  var(--dark-color),60%,
+  transparent), url("Images/background.png");
+  background-size: cover;
+}
+
+.home_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 8em;
+}
+
+.home_banner {
+  padding: 3em;
+  width: 600px;
+  background-color: var(--dark-color);
+  opacity: 0.9;
+}
+
+.home_welcome {
+  color: var(--white);
+  text-align: center;
+  font-family: "Barlow";
+  margin-left:0;
+  letter-spacing: 0.05em;
+}
+
+.home_welcometext {
+  letter-spacing: 0.05em;
+  color: var(--white);
+  text-align: center;
+}
+
+.exergue {
+  font-weight: 700;
+  color: var(--main-red-color);
+}
+
+.home_wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5em;
+  gap: 3em;
+}
+
+.voir-plus-button {
+  width: 300px;
+  height: 400px;
+  background-color: var(--dark-color);
+  color: var(--light-grey);
+  font-size: 5em;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 400px;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid var(--light-grey);
+  box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.5);
+}
+.voir-plus-button:hover {
+  transform: scale(0.95) translateX(-5px);
+  transition: all 0.5s ease-in-out;
+  background-color: var(--text-color);
+}
+
+/**************** NAVBAR ****************/
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 96%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  background-color: var(--dark-color);
+  z-index: 100;
+}
+
+.navbar_logo {
+  height: 50px;
+}
+
+.element-right {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.navbar__links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding-left: 0;
+  font-size: 1.3rem;
+  letter-spacing: 0.05em;
+}
+
+.navbar .icon {
+  width: 1.5em;
+  height: 1.5em;
+  color: var(--white);
+  font-size: 0.7rem;
+  padding: 0.5em;
+  border: 2px solid var(--white);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.navbar__links a {
+  color: var(--white);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  margin: 0 10px;
+  font-weight: 700;
+}
+
+.navbar__links a:hover {
+  color: var(--main-red-color);
+  border-bottom-color: var(--main-red-color);
+  font-weight: 400;
+}
+
+
+/**************** CARDS ****************/
+body {
+  background-color: var(--bg-color);
+  font-family: "Barlow";
+}
+
+.container {
+  margin-top: 8em;
+  margin-bottom: 8em;
+}
+
+h1 {
+  color: var(--dark-color);
+  font-weight: 700;
+  margin-left: 30px;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+.icon {
+  font-size: 90%;
+}
+
+.wrapper-cards {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5em;
+  row-gap: 5em;
+  column-gap: 2em;
+}
+.card {
+  flex-basis: 300px;
+  height: 400px;
+  background: var(--light-grey);
+  border: 2px solid var(--light-grey);
+  box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.8, 0.5, 0.2, 1.4);
+}
+.card img {
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s cubic-bezier(0.8, 0.5, 0.2, 1.4);
+}
+.descriptions {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: rgba(255, 255, 255, 0.7);
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  transition: all 0.7s ease-in-out;
+  box-sizing: border-box;
+  clip-path: circle(0% at 100% 100%);
+}
+.card:hover .descriptions {
+  left: 0px;
+  clip-path: circle(75%);
+  transition: all 0.7s ease-in-out;
+}
+.card:hover {
+  transition: all 0.5s cubic-bezier(0.8, 0.5, 0.2, 1.4);
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
+  transform: scale(0.97);
+}
+.card:hover img {
+  transition: all 0.5s cubic-bezier(0.8, 0.5, 0.2, 1.4);
+  transform: scale(1.6) rotate(20deg);
+  filter: blur(3px);
+}
+.card h2 {
+  color: var(--main-red-color);
+  font-size: 1.8em;
+  line-height: 0.8em;
+  margin: 0px;
+}
+
+.card .date {
+  color: var(--text-color);
+  font-weight: 500;
+  padding-top: 0;
+}
+
+.card .vote {
+  color: var(--main-red-color);
+  font-weight: 500;
+  padding-top: 0;
+  padding-bottom: 0.5em;
+}
+
+.card .resume {
+  max-height: 150px;
+  overflow-y: scroll;
+}
+
+.card .average {
+  color: var(--dark-red-color);
+  font-size: 1.2em;
+  font-weight: 700;
+  bottom: 0px;
+}
+
+.border-bottom-p {
+  border-bottom: 1px dashed var(--text-color);
+}
+.border-top-p {
+  border-top: 1px dashed var(--text-color);
+  padding-top: 0.5em;
+}
+
+
+/**************** FORM ****************/
+.avis_background {
+  width: 100%;
+  height: 100hv;
+  background: linear-gradient(0deg,
+  var(--dark-color),40%,
+  transparent), url("Images/background.png");
+  background-size: cover;
+  position: absolute;
+}
+
+.wrapper-form {
+  letter-spacing: 0.05em;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+}
+.wrapper-form h1 {
+  color: var(--main-red-color);
+  text-align: center;
+  margin-top: 0;
+  margin-left: 0;
+  margin-bottom: 0.2em;
+  font-weight: 500;
+}
+.wrapper-form p {
+  letter-spacing: 0.05em;
+  margin-bottom: 0;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.form-content {
+  padding: 2em;
+  opacity: 0.9;
+  background: var(--dark-color);
+  box-shadow: 0px 2px 10px rgba(246, 246, 246, 0.2);
+  color: var(--white);
+}
+
+.top-element {
+  display: flex;
+  gap: 5em;
+}
+
+.rating-box,
+.username-box {
+  width: 50%;
+}
+
+input,
+textarea,
+button {
+  border-radius: 0.2em;
+  border: 0;
+  padding: 0.8em;
+  width: 100%;
+  height: auto;
+  margin-top: 1em;
+  background-color: var(--light-grey);
+}
+
+textarea {
+  min-height: 150px;
+  width: 95%
+}
+
+button {
+  font-size: 1em;
+  letter-spacing: 1px;
+  background-color: var(--dark-red-color);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-right: 0px;
+}
+button:hover {
+  background-color: var(--main-red-color);
+  transform: scale(0.95) translateX(-5px);
+  transition: all 0.5s ease-in-out;
+}
+
+/* BOX RATING */
+.rating {
+  display: inline-block;
+  position: relative;
+  font-size: 40px;
+  line-height: 50px;
+}
+
+.rating label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  cursor: pointer;
+}
+
+.rating label:last-child {
+  position: static;
+}
+
+.rating label:nth-child(1) {
+  z-index: 5;
+}
+
+.rating label:nth-child(2) {
+  z-index: 4;
+}
+
+.rating label:nth-child(3) {
+  z-index: 3;
+}
+
+.rating label:nth-child(4) {
+  z-index: 2;
+}
+
+.rating label:nth-child(5) {
+  z-index: 1;
+}
+
+.rating label input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.rating label .icon {
+  float: left;
+  color: transparent;
+}
+
+.rating label:last-child .icon {
+  margin-right: 0.1em;
+  color: var(--light-grey);
+  border-color: var(--main-red-color);
+}
+
+.rating:not(:hover) label input:checked ~ .icon,
+.rating:hover label:hover input ~ .icon {
+  margin-right: 0.1em;
+  color: var(--main-red-color);
+}
+
+.rating label input:focus:not(:checked) ~ .icon:last-child {
+  color: var(--text-color);
+  text-shadow: 0 0 5px var(--main-red-color);
+}
+
+
+/**************** FOOTER ****************/
+.footer {
+  background-color: var(--dark-color);
+  position: fixed;
+  bottom: 0px;
+  width: 96%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--white);
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.footer__social img {
+  height: 20px;
+  width: 20px;
+  margin-left: 0.5em;
+}
+
+.footer__text {
+  font-size: 14px;
+}
